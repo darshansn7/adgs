@@ -238,10 +238,10 @@ variable "vm1_packages" {
 
 variable "vm2_packages" {
   type    = list(string)
-  default = ["jdk-11.0.12_linux-x64_bin.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
+  default = ["jdk-11.0.12_linux-x64_bin.rpm", "python-lxml-3.2.1-4.el7.x86_64.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
 }
 
 variable "vm3_packages" {
   type    = list(string)
-  default = ["jdk-11.0.12_linux-x64_bin.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
+  default = ["jdk-11.0.12_linux-x64_bin.rpm", "python-lxml-3.2.1-4.el7.x86_64.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
 }

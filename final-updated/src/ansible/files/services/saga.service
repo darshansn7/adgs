@@ -1,0 +1,15 @@
+[Unit]
+Description=Saga Service for Aspire
+After=elasticsearch.service
+[Service]
+User=aipuser
+Group=aipuser
+Type=simple
+WorkingDirectory=/opt/Saga_1.2.1.3
+ExecStart=/bin/bash -c '/opt/Saga_1.2.1.3/bin/startup.sh -startup'
+ExecStop=/bin/bash -c '/usr/bin/saga_stop.sh -sd'
+PIDFile=/opt/Saga_1.2.1.3/bin/saga.pid
+TimeoutStartSec=0
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,16 @@
+[Unit]
+Description=Description for sample script goes here
+After=network.target
+
+[Service]
+Type=simple
+User=aipuser
+Group=aipuser
+WorkingDirectory=/opt/aspire-4.0-SNAPSHOT
+ExecStart=/opt/aspire-4.0-SNAPSHOT/bin/aspire.sh -startup
+ExecStop=/opt/aspire-4.0-SNAPSHOT/bin/aspire.sh -sd
+TimeoutStartSec=0
+PIDFile=/opt/aspire-4.0-SNAPSHOT/bin/felix.pid
+
+[Install]
+WantedBy=default.target

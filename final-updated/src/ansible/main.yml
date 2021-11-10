@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  become_method: sudo 
+
+- import_playbook: java-install.yml
+- import_playbook: zk-install.yml
+- import_playbook: elastic-install.yml
+- import_playbook: saga-install.yml
+- import_playbook: aspire-master-install.yml
+- import_playbook: aspire-worker-install.yml

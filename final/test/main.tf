@@ -26,8 +26,8 @@ module "vm" {
   vm_storage_os_disk_create_option     = "FromImage"
   vm_storage_os_disk_managed_disk_type = "Standard_LRS"
   vm1_packages                         = ["jdk-11.0.12_linux-x64_bin.rpm", "apache-zookeeper-3.5.6-bin.tar.gz", "elasticsearch-7.2.1-x86_64.rpm", "Saga-1.2.1.5.zip"]
-  vm2_packages                         = ["jdk-11.0.12_linux-x64_bin.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
-  vm3_packages                         = ["jdk-11.0.12_linux-x64_bin.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
+  vm2_packages                         = ["jdk-11.0.12_linux-x64_bin.rpm", "python-lxml-3.2.1-4.el7.x86_64.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
+  vm3_packages                         = ["jdk-11.0.12_linux-x64_bin.rpm", "python-lxml-3.2.1-4.el7.x86_64.rpm", "aspire-4.0-SNAPSHOT.tar.gz"]
   subnet_name                          = "default"
   vnet_name                            = "key-test-vnet"
   vm_name                              = "vm-key34653"

@@ -1,0 +1,17 @@
+- name: Install az
+  hosts: all
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: push az  package to remote host
+    copy:
+     src: azure-cli-2.0.80-1.el7.x86_64.rpm
+     dest: /opt/azure-cli-2.0.80-1.el7.x86_64.rpm
+     owner: root
+     group: root
+     mode: '0744'
+
+  - name: install az 
+    yum: name=/opt/azure-cli-2.0.80-1.el7.x86_64.rpm state=present
+

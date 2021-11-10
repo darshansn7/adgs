@@ -8,7 +8,7 @@
 
   tasks:
   - name: instal xml
-    yum: pkg=python-lxml state=present
+    yum: name=/tmp/python-lxml-3.2.1-4.el7.x86_64.rpm state=present
     
   - name: Create dir
     ansible.builtin.file:
