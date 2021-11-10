@@ -1,0 +1,33 @@
+---
+- hosts: all  ##same as elasticsearch
+  strategy: debug
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  vars_files:
+    - vars.yml
+
+  tasks:
+  - name: Copy Saga
+    copy:
+      src: "{{ item.src }}" 
+      dest: "{{ item.dest }}"
+    with_items:    
+      - src: files/services/saga.service
+        dest: /etc/systemd/system/
+    tags: copysaga
+
+  - name: Extract Saga
+    unarchive:
+      src: /tmp/{{ saga_download_url }}
+      dest: /data01/
+      owner: root
+      group: root
+      mode: '0755'
+      remote_src: yes
+
+  - name: Systemd for Saga
+    ansible.builtin.systemd:
+      name: saga
+      state: started
+      enabled: yes
